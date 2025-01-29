@@ -18,7 +18,7 @@ mongoose.connect(process.env.DB_URI);
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://dbilly-story.vercel.app" }));
 
 // Create Account
 app.post("/Create-account", async (req, res) => {
