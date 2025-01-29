@@ -20,6 +20,8 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: "https://dbilly-story.vercel.app" }));
 
+app.get("/", (req, res) => res.json({ message: "server is live" }));
+
 // Create Account
 app.post("/Create-account", async (req, res) => {
   const { fullName, email, password } = req.body;
@@ -122,7 +124,7 @@ app.post("/image-upload", upload.single("image"), async (req, res) => {
         .json({ error: true, message: "Please upload an image" });
     }
 
-    const imageUrl = `http://localhost:8000/uploads/${req.file.filename}`;
+    const imageUrl = `https://dbilly-story.onrender.com/uploads/${req.file.filename}`;
 
     res.status(200).json({ imageUrl });
   } catch (error) {
