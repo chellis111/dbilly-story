@@ -4,6 +4,7 @@ import React from 'react';
 import Login from "./pages/Auth/Login";
 import SignUp from "./pages/Auth/SignUp";
 import Home from "./pages/Home/Home";
+import axios from 'axios';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
     </div>
   );
 }
+
 
 // Define the Root component to handle the initial redirect
 const Root = () => {
