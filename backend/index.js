@@ -18,7 +18,11 @@ mongoose.connect(process.env.DB_URI);
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://dbilly-story-12pm.vercel.app/", "http://localhost:5173/"],
+  })
+);
 
 app.get("/", (req, res) => res.json({ message: "server is live" }));
 
